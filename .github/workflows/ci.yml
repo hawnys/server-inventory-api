@@ -62,6 +62,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Start the API
+        env:
+          APP_VERSION: ci-${{ github.run_number }}
         run: |
           python app.py &
           sleep 5
@@ -77,4 +79,10 @@ jobs:
           response=$(curl -s http://127.0.0.1:5000/readyz)
           echo "Response: $response"
           echo "$response" | grep '"servers_loaded":9'
+
+      - name: Check /version response content
+        run: |
+          response=$(curl -s http://127.0.0.1:5000/version)
+          echo "Version response: $response"
+          echo "$response" | grep "ci-${{ github.run_number }}"
     
