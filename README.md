@@ -1,4 +1,4 @@
-![CI](https://github.com/YOUR-USERNAME/server-inventory-api/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/hawnys/server-inventory-api/actions/workflows/ci.yml/badge.svg)
 
 # server-inventory-api
 
