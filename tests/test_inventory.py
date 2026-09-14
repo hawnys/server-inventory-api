@@ -24,7 +24,7 @@ SAMPLE = [
 
 def test_load_inventory_reads_the_real_file():
     servers = load_inventory("servers.json")
-    assert len(servers) == 999 # was 9
+    assert len(servers) == 999  # was 9
     assert servers[0]["name"] == "web-01"
 
 
