@@ -37,4 +37,11 @@ jobs:
 
       - name: run pytest
         run: pytest -q --junitxml=report.xml
+
+      - name: save the test-report  
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-result-${{ matrix.python-version }}
+          path: report.xml
     
