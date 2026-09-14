@@ -10,8 +10,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  test: 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11","3.12"]
     steps:
       - name: print a hello msg
         run: echo "hello"
@@ -22,7 +25,7 @@ jobs:
       - name: setup python 
         uses: actions/setup-python@v7.0.0
         with:
-          python-version: "3.12"
+          python-version: ${{matrix.python-version}}
           
       - name: install dependencie 
         run: |
