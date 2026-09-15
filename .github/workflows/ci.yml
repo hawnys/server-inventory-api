@@ -19,10 +19,9 @@ jobs:
       - name: print a hello msg
         run: echo "hello"
 
-      # - name: check repo
-       # uses: actions/checkout@v6.1.0
-      - name: ls 
-        run: ls -la
+      - name: check repo
+        uses: actions/checkout@v6.1.0
+      
       - name: setup python 
         uses: actions/setup-python@v7.0.0
         with:
